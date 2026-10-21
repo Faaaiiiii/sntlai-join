@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10202c">
+<meta name="robots" content="noindex">
+<title>Join the SNTL channel — Paul XYZ</title>
+<meta property="og:title" content="Join the SNTL channel — Paul XYZ">
+<meta property="og:description" content="Live scalping signals: direction, plan, invalidation.">
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --ink:#050a12;
+    --ink-2:#0b1424;
+    --paper:#e6edf6;
+    --muted:#8494ab;
+    --teal:#22d3ee;
+    --rule:oklch(1 0 0 / .12);
+    --dsp:"Space Grotesk",system-ui,sans-serif;
+    --txt:"Inter",system-ui,sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{box-sizing:border-box}
+  html{background:var(--ink)}
+  body{margin:0;background:var(--ink);color:var(--paper);font:400 1.0625rem/1.6 var(--txt);-webkit-font-smoothing:antialiased}
+  .wrap{width:min(1180px,100%);margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+
+  /* ── hero ─────────────────────────────────────────── */
+  header.hero{position:relative;background:radial-gradient(75% 60% at 50% 0%,#0b2231 0%,#050a12 62%);padding:clamp(56px,9vh,110px) 0 clamp(40px,6vh,70px);overflow:hidden}
+  .rule-svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:2px;pointer-events:none}
+  .rule-svg path{stroke:var(--teal);stroke-width:2;fill:none;stroke-dasharray:100;stroke-dashoffset:100;
+                 animation:draw 900ms var(--ease) 120ms forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .hero h1{font-family:var(--dsp);font-weight:600;font-size:clamp(2.7rem,8.2vw,6rem);line-height:.94;
+           letter-spacing:-.035em;margin:0;max-width:15ch}
+  .hero h1 em{font-style:normal;color:var(--teal)}
+  .hero p{margin:clamp(22px,3vw,34px) 0 0;max-width:46ch;color:var(--muted);font-size:clamp(1rem,1.7vw,1.15rem)}
+  .cta{display:inline-flex;align-items:center;gap:.7em;margin-top:clamp(26px,4vw,40px);
+       background:linear-gradient(90deg,#22d3ee,#2de0c0);color:#04121a;text-decoration:none;
+       font-family:var(--dsp);font-weight:600;font-size:1rem;letter-spacing:-.01em;
+       padding:16px 26px;border-radius:10px;transition:transform 140ms var(--ease),background 140ms var(--ease)}
+  .cta:hover{transform:translateY(-2px);background:linear-gradient(90deg,#2de0c0,#22d3ee)}
+  .cta svg{width:16px;height:16px}
+  .hero .note{margin-top:18px;font-size:.9rem;color:var(--muted)}
+  .hero .note i{font-style:italic}
+
+  /* ── stages ───────────────────────────────────────── */
+  .stages{padding:clamp(50px,8vh,90px) 0 clamp(20px,4vh,40px);border-top:1px solid var(--rule)}
+  .stages h2{font-family:var(--dsp);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.4rem);
+             letter-spacing:-.02em;line-height:1.05;margin:0 0 8px;max-width:22ch}
+  .stages .lede{color:var(--muted);max-width:52ch;margin:0 0 clamp(30px,5vw,50px);font-size:1.02rem}
+
+  .plate{margin:0 0 clamp(34px,6vw,64px);position:relative}
+  .plate img{width:100%;height:auto;display:block;border:1px solid var(--rule)}
+  .plate figcaption{display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2.4vw,26px);align-items:baseline;
+                    padding-top:14px}
+  .plate .n{font-family:var(--dsp);font-weight:600;font-size:.95rem;color:var(--teal)}
+  .plate h3{font-family:var(--dsp);font-weight:600;font-size:clamp(1.05rem,2vw,1.3rem);
+            letter-spacing:-.015em;margin:0 0 4px}
+  .plate p{margin:0;color:var(--muted);font-size:.98rem;max-width:54ch}
+
+  /* grid break: second plate runs past the right margin, caption overlaps */
+  @media (min-width:900px){
+    .plate.bleed{margin-right:calc(-1 * clamp(20px,4vw,44px))}
+    .plate.bleed figcaption{position:absolute;left:0;bottom:0;right:34%;padding:18px 22px 16px;
+      background:var(--ink);border-top:1px solid var(--rule);grid-template-columns:auto 1fr}
+  }
+
+  /* ── close ────────────────────────────────────────── */
+  .close{padding:clamp(50px,8vh,90px) 0 clamp(70px,12vh,120px);border-top:1px solid var(--rule)}
+  .close h2{font-family:var(--dsp);font-weight:600;font-size:clamp(1.8rem,4.4vw,3rem);letter-spacing:-.03em;
+            line-height:1.02;margin:0 0 14px;max-width:20ch}
+  .close p{color:var(--muted);margin:0 0 26px;max-width:44ch}
+  footer{padding:26px 0 40px;border-top:1px solid var(--rule);color:var(--muted);font-size:.86rem;
+         display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
+
+  /* ── reveals: each enters from its own side ───────── */
+  .r{opacity:0;transform:translate3d(0,18px,0);transition:opacity 620ms var(--ease),transform 620ms var(--ease)}
+  .r.left{transform:translate3d(-24px,0,0)}
+  .r.right{transform:translate3d(24px,0,0)}
+  .r.in{opacity:1;transform:none}
+  .r.d1{transition-delay:60ms}.r.d2{transition-delay:120ms}
+  html.no-js .r{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .rule-svg path{animation:none;stroke-dashoffset:0}
+    .r{opacity:1;transform:none;transition:none}
+  }
+
+  /* ── scroll-driven (CSS, tiada listener) ───────────── */
+  .scrollbar{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);
+             background:linear-gradient(90deg,#22d3ee,#2de0c0);z-index:60;pointer-events:none}
+  @supports (animation-timeline: scroll()) {
+    .scrollbar{animation:barGrow linear both;animation-timeline:scroll(root);}
+    @keyframes barGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+    /* hero: teks mengecil + pudar sikit bila skrol keluar */
+    .hero .wrap{animation:heroOut linear both;animation-timeline:scroll(root);animation-range:0 60vh;}
+    @keyframes heroOut{
+      from{transform:translateY(0);opacity:1}
+      to{transform:translateY(-36px);opacity:.35}
+    }
+
+    /* plat: masuk dengan skala + caption naik */
+    .plate .frame{animation:plateIn linear both;animation-timeline:view();animation-range:entry 8% cover 38%;}
+    @keyframes plateIn{
+      from{transform:scale(.955) translateY(26px);opacity:.55}
+      to{transform:none;opacity:1}
+    }
+    .plate figcaption{animation:capIn linear both;animation-timeline:view();animation-range:entry 20% cover 45%;}
+    @keyframes capIn{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+  }
+
+  /* ── timbunan plat (sticky) — jelas bergerak bila skrol ── */
+  .stack{position:relative}
+  .stack .plate{position:sticky;top:calc(12vh + var(--i,0) * 10px);margin:0 0 42vh;
+                background:var(--ink);padding-top:10px;border-top:1px solid var(--rule)}
+  .stack .plate .frame{transform-origin:50% 0;will-change:transform}
+  .stack .plate:last-child{margin-bottom:40px}
+
+  /* ── pan mendatar (pinned) ───────────────────────── */
+  .pan{position:relative;height:170vh;border-top:1px solid var(--rule)}
+  .pan__in{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+  .pan__head{display:flex;gap:14px;align-items:baseline;padding:0 clamp(18px,4vw,40px) 18px}
+  .pan__n{font-family:var(--dsp);font-weight:700;color:var(--teal);font-size:1rem}
+  .pan__t{font-family:var(--dsp);font-weight:600;font-size:clamp(1rem,2.6vw,1.35rem);letter-spacing:-.01em}
+  .pan__track{display:flex;gap:clamp(14px,3vw,34px);padding:0 clamp(18px,4vw,40px);width:max-content;will-change:transform}
+  .slide{flex:0 0 auto;margin:0;display:flex;flex-direction:column;align-items:flex-start}
+  .slide img{display:block;height:min(56vh,500px);width:auto;max-width:82vw;object-fit:contain;background:#0a1420;border:1px solid var(--rule)}
+  .slide figcaption{margin-top:12px;color:var(--muted);font-size:.9rem;max-width:26ch}
+</style>
+</head>
+<body class="no-js">
+<div class="scrollbar" aria-hidden="true"></div>
+
+<header class="hero">
+  <svg class="rule-svg" viewBox="0 0 1200 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1 H1200" pathLength="100"/></svg>
+  <div class="wrap">
+    <h1>The plan lands <em>before</em> the trade does.</h1>
+    <p>You're not a bad trader. You're trading without direction.</p>
+    <a class="cta" href="https://t.me/+rDZgRzXDUIczNjc1" rel="noopener" target="_blank">
+      Join the channel
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+    </a>
+    <p class="note"><i>25,962 members · free to join, no forms</i></p>
+  </div>
+</header>
+
+<main>
+  <section class="stages">
+    <div class="wrap">
+      <h2>Direction before reaction.</h2>
+      
+
+      <div class="pan" id="pan">
+      <div class="pan__in">
+        <div class="pan__head"><span class="pan__n" id="pan-n" aria-hidden="true"></span><span class="pan__t" id="pan-t">Direction identified</span></div>
+        <div class="pan__track" id="pan-track">
+          <figure class="slide">
+            <img src="img/bersih1.jpg" alt="XAUUSD chart with the trendline touches marked">
+            <figcaption>We lock the direction before any entry.</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="img/bersih2.jpg" alt="XAUUSD chart with open positions">
+            <figcaption>Entry, stop-loss and target — posted together.</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="img/bersih3b.jpg" alt="XAUUSD chart with the invalidation level marked">
+            <figcaption>Respect the invalidation and a bad setup stays small.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <h2>One direction. One plan.</h2>
+      <p>Follow it to target or invalidation. That is the whole system.</p>
+      <a class="cta" href="https://t.me/+rDZgRzXDUIczNjc1" rel="noopener" target="_blank">
+        Join the channel
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="wrap"><footer><span>Paul XYZ · Sentinel Signal</span><span>Invite link · secure</span></footer></div>
+  </section>
+</main>
+
+<script>
+  document.body.classList.remove('no-js');
+  (function(){
+    var els = document.querySelectorAll('.r');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(e){ e.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+    els.forEach(function(e){ io.observe(e); });
+    // safety net: never leave content hidden
+    setTimeout(function(){ els.forEach(function(e){ e.classList.add('in'); }); }, 2500);
+  })();
+</script>
+
+<script>
+(function(){
+  var bar=document.querySelector('.scrollbar');
+  if(!bar) return;
+  var raf=false;
+  function upd(){
+    var h=document.documentElement;
+    var p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+    bar.style.transform='scaleX('+p.toFixed(4)+')';
+    raf=false;
+  }
+  /* auteur-allow: RAW_SCROLL_LISTENER -- fallback progress bar for Safari builds without animation-timeline; rAF-throttled, passive, single handler */
+  addEventListener('scroll',function(){ if(raf) return; raf=true; requestAnimationFrame(upd); },{passive:true});
+  upd();
+})();
+</script>
+
+<script>
+(function(){
+  var pan=document.getElementById('pan'), track=document.getElementById('pan-track'),
+      num=document.getElementById('pan-n'), ttl=document.getElementById('pan-t');
+  if(!pan||!track) return;
+  var n2=document.getElementById('pan-track').querySelectorAll('.slide');
+  function prog(){
+    var r=pan.getBoundingClientRect(), h=innerHeight, total=r.height-h;
+    return Math.min(1,Math.max(0,(-r.top)/total));
+  }
+  function upd(){
+    var p=prog();
+    var max=Math.max(0, track.scrollWidth-innerWidth+24);
+    track.style.transform='translate3d('+(-p*max).toFixed(1)+'px,0,0)';
+    var i=Math.min(n2.length-1, Math.round(p*(n2.length-1)));
+    num.textContent='0'+(i+1);
+    ttl.textContent = ['Direction identified','Trading plan shared','Risk managed'][i] || 'Direction identified';
+  }
+  var raf=false;
+  function onS(){ if(raf) return; raf=true; requestAnimationFrame(function(){ upd(); raf=false; }); }
+  /* auteur-allow: RAW_SCROLL_LISTENER -- pinned horizontal pan needs scroll progress; rAF-throttled, passive, single handler */
+  addEventListener('scroll', onS, {passive:true});
+  addEventListener('resize', upd);
+  upd();
+})();
+</script>
+</body>
+</html>
